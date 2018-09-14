@@ -1,5 +1,6 @@
 from random import randint
 
+
 def generate_number():
     global number
     number = str(randint(1000, 9999))
@@ -21,7 +22,8 @@ def compare_numbers(called_number):
             bulls += 1
         if number.count(called_number[i]) == 1 and number[i] != called_number[i]:
             cows += 1
-    print("Быков - ", bulls, ", Коров - ", cows)
+    hits = {'bulls': bulls, 'cows': cows}
+    return hits
 
 
 def is_game_over():
